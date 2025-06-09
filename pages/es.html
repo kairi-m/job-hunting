@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES・面接ノート - 就活支援アプリ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ES・面接ノート</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="tracker.html">📊 進捗トラッカー</a></li>
+                <li><a href="es.html">📝 ES・面接ノート</a></li>
+                <li><a href="compare.html">⚖️ 企業比較</a></li>
+                <li><a href="tasks.html">✅ タスク管理</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="es-container">
+            <!-- テンプレート管理セクション -->
+            <section class="template-section mb-3">
+                <h2>回答テンプレート管理</h2>
+                <form id="templateForm">
+                    <div class="form-group">
+                        <label for="templateCategory">カテゴリ</label>
+                        <select id="templateCategory" required>
+                            <option value="自己PR">自己PR</option>
+                            <option value="ガクチカ">ガクチカ</option>
+                            <option value="志望動機">志望動機</option>
+                            <option value="長所">長所</option>
+                            <option value="短所">短所</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="templateTitle">タイトル</label>
+                        <input type="text" id="templateTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="templateContent">内容</label>
+                        <textarea id="templateContent" rows="5" required></textarea>
+                        <div class="character-count">文字数: <span id="templateCharCount">0</span></div>
+                    </div>
+                    <button type="submit">テンプレートを保存</button>
+                </form>
+            </section>
+
+            <!-- 企業別ES管理セクション -->
+            <section class="company-es-section mb-3">
+                <h2>企業別ES・面接ノート管理</h2>
+                <form id="companyEsForm">
+                    <div class="form-group">
+                        <label for="companyName">企業名</label>
+                        <input type="text" id="companyName" required>
+                    </div>
+                    <div id="questionContainer">
+                        <div class="question-set mb-2">
+                            <div class="form-group">
+                                <label for="questionType-0">設問種類</label>
+                                <select id="questionType-0" class="question-type" required>
+                                    <option value="自己PR">自己PR</option>
+                                    <option value="ガクチカ">ガクチカ</option>
+                                    <option value="志望動機">志望動機</option>
+                                    <option value="長所">長所</option>
+                                    <option value="短所">短所</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question-0">設問内容</label>
+                                <input type="text" id="question-0" class="question" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="answer-0">回答</label>
+                                <textarea id="answer-0" class="answer" rows="5" required></textarea>
+                                <div class="character-count">文字数: <span id="answerCharCount-0">0</span></div>
+                            </div>
+                            <button type="button" class="remove-question" onclick="esManager.removeQuestionSet(0)" style="display: none;">この設問を削除</button>
+                        </div>
+                    </div>
+                    <button type="button" onclick="esManager.addQuestionSet()" class="mb-2">設問を追加</button>
+                    <button type="submit">回答を保存</button>
+                </form>
+            </section>
+
+            <!-- 保存済み回答一覧ボタン -->
+            <section class="saved-answers-controls mb-3">
+                <button id="toggleSavedAnswers" class="toggle-btn">保存済みの回答一覧を表示</button>
+            </section>
+
+            <!-- 保存済み回答一覧 -->
+            <section id="savedAnswersSection" class="saved-answers-section" style="display: none;">
+                <div class="search-controls mb-2">
+                    <input type="text" id="searchKeyword" placeholder="キーワードで検索...">
+                    <select id="categoryFilter">
+                        <option value="">全てのカテゴリ</option>
+                        <option value="自己PR">自己PR</option>
+                        <option value="ガクチカ">ガクチカ</option>
+                        <option value="志望動機">志望動機</option>
+                        <option value="長所">長所</option>
+                        <option value="短所">短所</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                <div id="savedAnswers" class="answers-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/es.js"></script>
+</body>
+</html> 

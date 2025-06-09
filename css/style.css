@@ -1,0 +1,955 @@
+/* 全体のリセットとベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダースタイル */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #34495e;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+    margin-bottom: 4rem; /* フッターの高さ分の余白を追加 */
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.welcome h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+/* 機能カード */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    margin-bottom: 1.5rem;
+}
+
+/* ボタンスタイル */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* フッター */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto; /* フレックスボックスで下部に配置 */
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 共通のユーティリティクラス */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+
+/* フォーム要素の共通スタイル */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    min-width: 600px;
+}
+
+button {
+    padding: 0.5rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* テーブルの共通スタイル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* アラートメッセージのスタイル */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* 設問セット */
+.question-set {
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-color: #fff;
+}
+
+.question-set .form-group:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.remove-question {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.remove-question:hover {
+    background-color: #cc0000;
+}
+
+/* 設問回答セット */
+.question-answer-set {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.question-answer-set:last-child {
+    margin-bottom: 0;
+}
+
+.question-answer-set .category-badge {
+    margin-bottom: 0.5rem;
+}
+
+.question-answer-set .question {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* バッジ */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.875rem;
+}
+
+/* フォーム要素 */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* タスク管理・ES管理専用のコンテナ */
+.task-container,
+.es-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* カレンダーセクション */
+.calendar-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#calendar {
+    min-height: 500px;
+}
+
+/* カレンダーイベントのスタイル */
+.fc .fc-daygrid-event {
+    background: none;
+    border: none;
+    margin: 1px 2px;
+}
+
+.calendar-event {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    margin: 1px 0;
+    border-radius: 3px;
+    font-size: 0.85em;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.calendar-event:hover {
+    background-color: #f8f9fa;
+}
+
+.calendar-event .event-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.calendar-event .event-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+}
+
+/* イベントタイプ別の色設定 */
+.task-event .event-dot {
+    background-color: #4CAF50;
+}
+
+.task-event.priority-高 .event-dot {
+    background-color: #f44336;
+}
+
+.task-event.priority-中 .event-dot {
+    background-color: #ff9800;
+}
+
+.task-event.priority-低 .event-dot {
+    background-color: #4CAF50;
+}
+
+.tracker-event .event-dot {
+    background-color: #2196F3;
+}
+
+.deadline-event .event-dot {
+    background-color: #9C27B0;
+}
+
+.es-event .event-dot {
+    background-color: #FF5722;
+}
+
+/* カレンダーセルのスタイル調整 */
+.fc .fc-daygrid-day-frame {
+    min-height: 100px;
+    padding: 4px;
+}
+
+.fc .fc-daygrid-day-top {
+    flex-direction: row;
+}
+
+.fc .fc-daygrid-day-number {
+    padding: 4px;
+    position: relative;
+}
+
+.fc .fc-day-today {
+    background-color: #f8f9fa !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+}
+
+.fc .fc-daygrid-event-harness {
+    margin: 1px 0;
+}
+
+.fc .fc-daygrid-more-link {
+    font-size: 0.85em;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-top: 2px;
+}
+
+/* カレンダー全体のスタイル */
+#calendar {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 2rem;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.fc .fc-button-primary {
+    background-color: #007bff;
+    border-color: #0056b3;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.fc .fc-button-primary:disabled {
+    background-color: #6c757d;
+    border-color: #545b62;
+}
+
+/* サマリーセクション */
+.summary-section {
+    margin-top: 2rem;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.summary-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.summary-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.summary-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-card li:last-child {
+    border-bottom: none;
+}
+
+/* ウェルカムセクション */
+.welcome-section {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.welcome-section h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.welcome-section p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 機能セクション */
+.features-section {
+    margin-bottom: 2rem;
+    overflow-x: auto; /* 横スクロールを可能にする */
+}
+
+.features-grid {
+    display: flex; /* グリッドからフレックスボックスに変更 */
+    gap: 1.5rem;
+    min-width: min-content; /* コンテンツが切れないようにする */
+    padding: 0.5rem; /* スクロールバーのスペースを確保 */
+}
+
+.feature-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex: 0 0 300px; /* カードの幅を固定 */
+    max-width: 300px; /* 最大幅を設定 */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    margin: 0 0 1rem;
+    color: #333;
+    font-size: 1.25rem;
+    white-space: nowrap; /* タイトルを1行に */
+}
+
+.feature-card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.feature-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.feature-points li {
+    padding: 0.5rem 0;
+    color: #555;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-points li:before {
+    content: "•";
+    color: #4CAF50;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.feature-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    width: 100%; /* ボタンを幅いっぱいに */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.feature-btn:hover {
+    background-color: #45a049;
+}
+
+/* スクロールバーのカスタマイズ */
+.features-section::-webkit-scrollbar {
+    height: 8px;
+}
+
+.features-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.features-section::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.features-section::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1280px) {
+    .features-section {
+        margin: 0 -1rem; /* ネガティブマージンでコンテナの制限を解除 */
+        padding: 0 1rem;
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* タスク管理 */
+.task-form-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-list-controls {
+    text-align: center;
+}
+
+.toggle-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #45a049;
+}
+
+.task-list-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.task-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.sort-controls,
+.filter-controls,
+.search-controls {
+    flex: 1;
+    min-width: 200px;
+}
+
+.sort-controls label,
+.filter-controls label {
+    margin-right: 0.5rem;
+}
+
+.search-controls input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task-item {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid #4CAF50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item.completed {
+    border-left-color: #999;
+    opacity: 0.7;
+}
+
+.task-item.high-priority {
+    border-left-color: #f44336;
+}
+
+.task-item.medium-priority {
+    border-left-color: #ff9800;
+}
+
+.task-item.low-priority {
+    border-left-color: #4CAF50;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.task-details {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task-actions button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.complete-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* ES・面接ノート */
+.saved-answers-controls {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.saved-answers-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.search-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-controls input,
+.search-controls select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.answers-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.answer-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.answer-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.answer-card .card-header h4 {
+    margin: 0;
+    color: #333;
+}
+
+.answer-card .category-badge {
+    background: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.answer-card .card-content {
+    margin-bottom: 1rem;
+}
+
+.answer-card .question-answer-set {
+    margin: 16px 0;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.answer-card .question-answer-set:last-child {
+    margin-bottom: 0;
+}
+
+.answer-card .question {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.answer-card .card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.answer-card .card-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: white;
+}
+
+.answer-card .card-actions button:first-child {
+    background-color: #2196F3;
+}
+
+.answer-card .card-actions button:nth-child(2) {
+    background-color: #4CAF50;
+}
+
+.answer-card .card-actions button:last-child {
+    background-color: #f44336;
+}
+
+.answer-card .card-actions button:hover {
+    opacity: 0.9;
+}
+
+/* 項目名のスタイル */
+.item-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.item-row p {
+    margin: 0;
+    flex: 1;
+}
+
+/* 回答カードのスタイル */
+.answer-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question-answer-set {
+    margin: 16px 0;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.category-badge {
+    background: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.answer-text {
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+/* タスクアイテムのスタイル */
+.task-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-description {
+    color: #666;
+    margin: 8px 0;
+    white-space: pre-wrap;
+}
+
+.task-details {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+/* 文字数表示 */
+.char-count {
+    display: inline-block;
+    color: #666;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+} 

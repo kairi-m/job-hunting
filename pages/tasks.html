@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タスク管理 - 就活支援アプリ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>タスク管理</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="tracker.html">📊 進捗トラッカー</a></li>
+                <li><a href="es.html">📝 ES・面接ノート</a></li>
+                <li><a href="compare.html">⚖️ 企業比較</a></li>
+                <li><a href="tasks.html">✅ タスク管理</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="task-form-section mb-3">
+            <h2>新規タスク登録</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskTitle">タスク名</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">詳細</label>
+                    <textarea id="taskDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="taskDueDate">期限</label>
+                    <input type="date" id="taskDueDate">
+                </div>
+                <div class="form-group">
+                    <label for="taskPriority">優先度</label>
+                    <select id="taskPriority">
+                        <option value="高">高</option>
+                        <option value="中" selected>中</option>
+                        <option value="低">低</option>
+                    </select>
+                </div>
+                <button type="submit">タスクを追加</button>
+            </form>
+        </section>
+
+        <section class="task-list-controls mb-3">
+            <button id="toggleTaskList" class="toggle-btn">タスク一覧を表示</button>
+        </section>
+
+        <section id="taskListSection" class="task-list-section" style="display: none;">
+            <div class="task-controls mb-2">
+                <div class="sort-controls">
+                    <label for="sortBy">並び替え:</label>
+                    <select id="sortBy">
+                        <option value="dueDate">期限順</option>
+                        <option value="priority">優先度順</option>
+                        <option value="created">作成日順</option>
+                    </select>
+                </div>
+                <div class="filter-controls">
+                    <label for="filterStatus">ステータス:</label>
+                    <select id="filterStatus">
+                        <option value="all">全て</option>
+                        <option value="active">未完了</option>
+                        <option value="completed">完了済み</option>
+                    </select>
+                </div>
+                <div class="search-controls">
+                    <input type="text" id="searchTask" placeholder="タスクを検索...">
+                </div>
+            </div>
+
+            <div id="taskList" class="task-list">
+                <!-- タスクがここに動的に追加されます -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/tasks.js"></script>
+</body>
+</html> 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>就活支援アプリ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FullCalendarのスタイル -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>就活支援アプリ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="pages/tracker.html">📊 進捗トラッカー</a></li>
+                <li><a href="pages/es.html">📝 ES・面接ノート</a></li>
+                <li><a href="pages/compare.html">⚖️ 企業比較</a></li>
+                <li><a href="pages/tasks.html">✅ タスク管理</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="welcome-section mb-3">
+            <h2>ようこそ、就活支援アプリへ</h2>
+            <p>このアプリは、就職活動をより効率的に管理するためのツールです。</p>
+        </section>
+
+        <section class="features-section mb-3">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📊 進捗トラッカー</h3>
+                    <p>応募企業の選考状況を一元管理</p>
+                    <ul class="feature-points">
+                        <li>企業ごとの選考ステップを記録</li>
+                        <li>次の選考日程を管理</li>
+                        <li>選考結果の履歴を保存</li>
+                    </ul>
+                    <a href="pages/tracker.html" class="feature-btn">使ってみる</a>
+                </div>
+                <div class="feature-card">
+                    <h3>📝 ES・面接ノート</h3>
+                    <p>エントリーシートや面接の回答を管理</p>
+                    <ul class="feature-points">
+                        <li>企業別の回答を保存</li>
+                        <li>テンプレートを活用</li>
+                        <li>複数の設問を一括管理</li>
+                    </ul>
+                    <a href="pages/es.html" class="feature-btn">使ってみる</a>
+                </div>
+                <div class="feature-card">
+                    <h3>⚖️ 企業比較</h3>
+                    <p>複数の企業情報を比較・検討</p>
+                    <ul class="feature-points">
+                        <li>企業情報を詳細に記録</li>
+                        <li>重要なポイントを比較</li>
+                        <li>メモや評価を管理</li>
+                    </ul>
+                    <a href="pages/compare.html" class="feature-btn">使ってみる</a>
+                </div>
+                <div class="feature-card">
+                    <h3>✅ タスク管理</h3>
+                    <p>就活のタスクを効率的に管理</p>
+                    <ul class="feature-points">
+                        <li>締め切り日を設定</li>
+                        <li>優先順位をつけて整理</li>
+                        <li>完了したタスクを記録</li>
+                    </ul>
+                    <a href="pages/tasks.html" class="feature-btn">使ってみる</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendar-section mb-3">
+            <h2>スケジュール</h2>
+            <div id="calendar"></div>
+        </section>
+
+        <section class="summary-section">
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>📊 進捗状況</h3>
+                    <div id="trackerSummary">
+                        <p>応募中の企業: <span id="activeApplications">0</span></p>
+                        <p>選考通過率: <span id="passRate">0</span>%</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>✅ 直近のタスク</h3>
+                    <div id="upcomingTasks">
+                        <ul id="tasksList"></ul>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>📝 最近のES・面接</h3>
+                    <div id="recentNotes">
+                        <ul id="notesList"></ul>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>⚖️ 注目の企業</h3>
+                    <div id="featuredCompanies">
+                        <ul id="companiesList"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+
+    <!-- FullCalendarのスクリプト -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html> 

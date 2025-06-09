@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業比較 - 就活支援アプリ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>企業比較</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="tracker.html">📊 進捗トラッカー</a></li>
+                <li><a href="es.html">📝 ES・面接ノート</a></li>
+                <li><a href="compare.html">⚖️ 企業比較</a></li>
+                <li><a href="tasks.html">✅ タスク管理</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 企業情報入力フォーム -->
+        <section class="mb-3">
+            <h2>企業情報登録</h2>
+            <form id="companyForm">
+                <div class="form-group">
+                    <label for="companyName">企業名</label>
+                    <input type="text" id="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="industry">業界</label>
+                    <input type="text" id="industry" required>
+                </div>
+                <div class="form-group">
+                    <label for="businessDescription">事業内容</label>
+                    <textarea id="businessDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="companyPhilosophy">企業理念</label>
+                    <textarea id="companyPhilosophy" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="salary">初任給</label>
+                    <input type="number" id="salary" min="0" step="10000">
+                </div>
+                <div class="form-group">
+                    <label for="workLocation">勤務地</label>
+                    <input type="text" id="workLocation">
+                </div>
+                <div class="form-group">
+                    <label for="workHours">勤務時間</label>
+                    <input type="text" id="workHours">
+                </div>
+                <div class="form-group">
+                    <label for="overtimeHours">平均残業時間（月）</label>
+                    <input type="number" id="overtimeHours" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="benefits">福利厚生</label>
+                    <textarea id="benefits" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="corporateCulture">社風・雰囲気</label>
+                    <textarea id="corporateCulture" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="evaluation">総合評価（5段階）</label>
+                    <select id="evaluation" required>
+                        <option value="5">5 - とても良い</option>
+                        <option value="4">4 - 良い</option>
+                        <option value="3">3 - 普通</option>
+                        <option value="2">2 - やや悪い</option>
+                        <option value="1">1 - 悪い</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">メモ・気になる点</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                <button type="submit">企業情報を保存</button>
+            </form>
+        </section>
+
+        <!-- 企業比較表示セクション -->
+        <section>
+            <h2>企業比較</h2>
+            <div class="comparison-controls mb-2">
+                <input type="text" id="searchCompany" placeholder="企業名で検索...">
+                <button onclick="companyCompare.toggleAllDetails()">全ての詳細を表示/非表示</button>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <!-- 企業列はJavaScriptで動的に追加 -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 比較データはJavaScriptで動的に追加 -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/compare.js"></script>
+</body>
+</html> 

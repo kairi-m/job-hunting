@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>進捗トラッカー - 就活支援アプリ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>進捗トラッカー</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="tracker.html">📊 進捗トラッカー</a></li>
+                <li><a href="es.html">📝 ES・面接ノート</a></li>
+                <li><a href="compare.html">⚖️ 企業比較</a></li>
+                <li><a href="tasks.html">✅ タスク管理</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="mb-3">
+            <h2>企業情報登録</h2>
+            <form id="companyForm">
+                <div class="form-group">
+                    <label for="companyName">企業名</label>
+                    <input type="text" id="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">応募職種</label>
+                    <input type="text" id="position" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">選考ステータス</label>
+                    <select id="status" required>
+                        <option value="書類選考中">書類選考中</option>
+                        <option value="一次面接">一次面接</option>
+                        <option value="二次面接">二次面接</option>
+                        <option value="最終面接">最終面接</option>
+                        <option value="内定">内定</option>
+                        <option value="不合格">不合格</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="applicationDate">応募日</label>
+                    <input type="date" id="applicationDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="deadline">締切日</label>
+                    <input type="date" id="deadline">
+                </div>
+                <div class="form-group">
+                    <label for="notes">メモ</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                <button type="submit">登録</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>応募企業一覧</h2>
+            <div class="filter-controls mb-2">
+                <select id="statusFilter">
+                    <option value="">全てのステータス</option>
+                    <option value="書類選考中">書類選考中</option>
+                    <option value="一次面接">一次面接</option>
+                    <option value="二次面接">二次面接</option>
+                    <option value="最終面接">最終面接</option>
+                    <option value="内定">内定</option>
+                    <option value="不合格">不合格</option>
+                </select>
+                <button onclick="sortByDeadline()">締切日でソート</button>
+            </div>
+            <table id="companyTable">
+                <thead>
+                    <tr>
+                        <th>企業名</th>
+                        <th>応募職種</th>
+                        <th>ステータス</th>
+                        <th>応募日</th>
+                        <th>締切日</th>
+                        <th>メモ</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/tracker.js"></script>
+</body>
+</html> 
