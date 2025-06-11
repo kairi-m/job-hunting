@@ -18,6 +18,7 @@
                 <li><a href="pages/es.html">📝 ES・面接ノート</a></li>
                 <li><a href="pages/compare.html">⚖️ 企業比較</a></li>
                 <li><a href="pages/tasks.html">✅ タスク管理</a></li>
+                <li><a href="pages/axis.html">🎯 自己・軸診断</a></li>
             </ul>
         </nav>
     </header>
@@ -105,8 +106,22 @@
                         <ul id="companiesList"></ul>
                     </div>
                 </div>
+                <div class="summary-card">
+                    <h3>🎯 最新の軸診断結果</h3>
+                    <div id="latestAxisResult">
+                        <p class="no-result">まだ診断結果がありません</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <section id="savedAxisResults" class="saved-results-section" style="display: none;">
+            <h2>保存済みの軸診断結果</h2>
+            <div class="results-container">
+                <!-- 結果がJavaScriptで動的に挿入されます -->
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -117,5 +132,11 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
     <script src="js/main.js"></script>
     <script src="js/home.js"></script>
+    <script>
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', function() {
+            displayAxisResults();
+        });
+    </script>
 </body>
 </html> 

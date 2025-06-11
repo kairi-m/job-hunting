@@ -313,148 +313,125 @@ tr:nth-child(even) {
     min-height: 500px;
 }
 
-/* カレンダーイベントのスタイル */
-.fc .fc-daygrid-event {
-    background: none;
-    border: none;
-    margin: 1px 2px;
+/* カレンダーのスタイル */
+.fc {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.fc-day {
+    min-height: 100px !important;
+}
+
+.fc-day-today {
+    background: #e7f5ff !important;
+}
+
+.fc-day:hover {
+    background: #f8f9fa;
+}
+
+.fc-daygrid-day-number {
+    font-weight: 600;
+    color: #495057;
+}
+
+.fc-day-today .fc-daygrid-day-number {
+    color: #228be6;
+}
+
+/* カレンダーイベントのスタイル */
 .calendar-event {
-    display: flex;
-    align-items: center;
-    padding: 2px 4px;
     margin: 1px 0;
-    border-radius: 3px;
-    font-size: 0.85em;
-    line-height: 1.3;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    line-height: 1.4;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.calendar-event:hover {
-    background-color: #f8f9fa;
-}
-
-.calendar-event .event-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-right: 4px;
-    flex-shrink: 0;
-}
-
-.calendar-event .event-title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #333;
-}
-
-/* イベントタイプ別の色設定 */
-.task-event .event-dot {
-    background-color: #4CAF50;
-}
-
-.task-event.priority-高 .event-dot {
-    background-color: #f44336;
-}
-
-.task-event.priority-中 .event-dot {
-    background-color: #ff9800;
-}
-
-.task-event.priority-低 .event-dot {
-    background-color: #4CAF50;
-}
-
-.tracker-event .event-dot {
-    background-color: #2196F3;
-}
-
-.deadline-event .event-dot {
-    background-color: #9C27B0;
-}
-
-.es-event .event-dot {
-    background-color: #FF5722;
-}
-
-/* カレンダーセルのスタイル調整 */
-.fc .fc-daygrid-day-frame {
-    min-height: 100px;
-    padding: 4px;
-}
-
-.fc .fc-daygrid-day-top {
-    flex-direction: row;
-}
-
-.fc .fc-daygrid-day-number {
-    padding: 4px;
-    position: relative;
-}
-
-.fc .fc-day-today {
-    background-color: #f8f9fa !important;
-}
-
-.fc .fc-day-today .fc-daygrid-day-number {
-    background-color: #007bff;
     color: white;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2px;
 }
 
-.fc .fc-daygrid-event-harness {
-    margin: 1px 0;
+.calendar-event.personal {
+    background: #4dabf7;
 }
 
-.fc .fc-daygrid-more-link {
-    font-size: 0.85em;
-    color: #666;
-    background-color: #f5f5f5;
-    padding: 2px 4px;
-    border-radius: 3px;
-    margin-top: 2px;
+.calendar-event.interview {
+    background: #fcc419;
 }
 
-/* カレンダー全体のスタイル */
-#calendar {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin-bottom: 2rem;
+.calendar-event.task {
+    background: #51cf66;
 }
 
-.fc .fc-toolbar-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
+.calendar-event.deadline {
+    background: #ff6b6b;
 }
 
-.fc .fc-button-primary {
-    background-color: #007bff;
-    border-color: #0056b3;
+.calendar-event.other {
+    background: #868e96;
 }
 
-.fc .fc-button-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+/* イベントが多い場合の「+more」リンク */
+.fc-daygrid-more-link {
+    color: #228be6;
+    font-weight: 600;
+    font-size: 0.85rem;
 }
 
-.fc .fc-button-primary:disabled {
-    background-color: #6c757d;
-    border-color: #545b62;
+/* イベントポップオーバーのスタイル */
+.fc-popover {
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.fc-popover-header {
+    background: #f8f9fa !important;
+    padding: 8px !important;
+}
+
+.fc-popover-title {
+    font-weight: 600 !important;
+    color: #495057 !important;
+}
+
+.fc-popover-close {
+    font-size: 1.2rem !important;
+    color: #adb5bd !important;
+}
+
+/* カレンダーのヘッダー */
+.fc-toolbar-title {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #495057 !important;
+}
+
+.fc-button-primary {
+    background-color: #228be6 !important;
+    border-color: #228be6 !important;
+}
+
+.fc-button-primary:hover {
+    background-color: #1c7ed6 !important;
+    border-color: #1c7ed6 !important;
+}
+
+.fc-button-primary:disabled {
+    background-color: #74c0fc !important;
+    border-color: #74c0fc !important;
+}
+
+/* イベントの説明文のスタイル */
+.event-description {
+    font-size: 0.9rem;
+    color: #495057;
+    margin-top: 0.5rem;
+    white-space: normal;
+    line-height: 1.4;
 }
 
 /* サマリーセクション */
@@ -952,4 +929,823 @@ tr:nth-child(even) {
     color: #666;
     font-size: 0.875rem;
     margin-left: 0.5rem;
-} 
+}
+
+/* 軸診断結果のスタイル */
+.latest-result {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.latest-result h4 {
+    color: #228be6;
+    margin-bottom: 0.5rem;
+}
+
+.latest-result .catchphrase {
+    color: #495057;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.type-scores-mini {
+    margin: 1rem 0;
+}
+
+.score-bar-mini {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.type-label-mini {
+    min-width: 70px;
+    color: #495057;
+}
+
+.bar-container-mini {
+    flex-grow: 1;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-mini {
+    height: 100%;
+    background: #4dabf7;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.view-details {
+    display: inline-block;
+    color: #228be6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* 保存済み結果一覧のスタイル */
+.saved-results-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.saved-results-section h2 {
+    color: #343a40;
+    margin-bottom: 1.5rem;
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.saved-result-card {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.saved-result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.result-header h4 {
+    color: #228be6;
+    margin: 0;
+}
+
+.result-header .date {
+    color: #868e96;
+    font-size: 0.8rem;
+}
+
+.btn-details {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #228be6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: background 0.2s ease;
+}
+
+.btn-details:hover {
+    background: #1c7ed6;
+}
+
+/* モーダルのスタイル改善 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header .date {
+    color: #868e96;
+    font-size: 0.9rem;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    margin: 2% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content .type-scores {
+    margin: 1.5rem 0;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.modal-content .score-bar {
+    margin-bottom: 1rem;
+}
+
+.modal-content .type-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content .type-label {
+    font-weight: 600;
+    color: #228be6;
+    margin-right: 1rem;
+    min-width: 80px;
+}
+
+.modal-content .type-description {
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.modal-content .bar-container {
+    background: #e9ecef;
+    border-radius: 12px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.modal-content .bar {
+    height: 100%;
+    background: #4dabf7;
+    border-radius: 12px;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.modal-content .score-text {
+    position: absolute;
+    right: 10px;
+    color: white;
+    font-size: 0.9rem;
+    line-height: 24px;
+}
+
+/* 詳細を見るボタンのスタイル */
+.view-details {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #228be6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.view-details:hover {
+    background: #1c7ed6;
+}
+
+/* 結果がない場合のスタイル */
+.no-result {
+    text-align: center;
+    padding: 2rem;
+}
+
+.no-result p {
+    color: #868e96;
+    margin-bottom: 1rem;
+}
+
+.no-result .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #228be6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.no-result .btn:hover {
+    background: #1c7ed6;
+}
+
+/* モーダルの基本スタイル */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal.show {
+    display: block;
+}
+
+.close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #adb5bd;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close:hover {
+    color: #495057;
+}
+
+/* カレンダーイベント追加モーダル */
+.event-modal .modal-content {
+    max-width: 500px;
+}
+
+.event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.event-type-select {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.event-type-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.event-type-option:hover {
+    background: #f8f9fa;
+}
+
+.event-type-option.selected {
+    background: #228be6;
+    color: white;
+    border-color: #228be6;
+}
+
+.event-type-option input[type="radio"] {
+    display: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-cancel {
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background: white;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+    background: #f8f9fa;
+}
+
+.btn-save {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #228be6;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-save:hover {
+    background: #1c7ed6;
+}
+
+/* 進捗トラッカー情報のポップオーバー */
+.deadline-info {
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.company-info {
+    padding: 1rem 0;
+}
+
+.company-info h4 {
+    color: #228be6;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.info-grid {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-item .label {
+    color: #868e96;
+    font-size: 0.9rem;
+    min-width: 80px;
+}
+
+.info-item .value {
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ステータスの色分け */
+.status-未着手 {
+    color: #868e96;
+}
+
+.status-エントリー済み {
+    color: #4dabf7;
+}
+
+.status-書類選考中 {
+    color: #15aabf;
+}
+
+.status-面接選考中 {
+    color: #37b24d;
+}
+
+.status-内定 {
+    color: #f59f00;
+    font-weight: 600;
+}
+
+.status-不合格 {
+    color: #ff6b6b;
+}
+
+.status-辞退 {
+    color: #868e96;
+}
+
+.company-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-view {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    background-color: #6c757d;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.btn-view:hover {
+    background-color: #5a6268;
+}
+
+hr {
+    margin: 1rem 0;
+    border: none;
+    border-top: 1px solid #dee2e6;
+}
+
+/* イベントポップオーバー */
+.event-popover {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-width: 320px;
+    max-width: 400px;
+}
+
+.event-popover-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+.event-popover-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.event-popover-close {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.event-popover-content {
+    padding: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.info-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+.info-item .label {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.info-item .value {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.info-item.description {
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.info-item.description .value {
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* イベントタイプの色分け */
+.event-type-personal {
+    color: #007bff;
+    font-weight: 500;
+}
+
+.event-type-interview {
+    color: #ffc107;
+    font-weight: 500;
+}
+
+.event-type-other {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* URLリンクのスタイル */
+.info-item a {
+    color: #007bff;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.popover-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    justify-content: flex-end;
+}
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* ステータスと優先度のスタイル */
+.status-未着手 { color: #6c757d; }
+.status-選考中 { color: #007bff; }
+.status-内定 { color: #28a745; }
+.status-不合格 { color: #dc3545; }
+
+.priority-high { color: #dc3545; }
+.priority-medium { color: #ffc107; }
+.priority-low { color: #28a745; }
+
+/* イベントタイプのスタイル */
+.event-type-personal {
+    color: #007bff;
+}
+
+.event-type-interview {
+    color: #ffc107;
+}
+
+.event-type-other {
+    color: #6c757d;
+}
+
+/* 詳細情報のスタイル */
+.info-item.description {
+    grid-template-columns: 1fr;
+    gap: 4px;
+}
+
+.info-item.description .label {
+    margin-bottom: 4px;
+}
+
+.info-item.description .value {
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.info-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+/* モーダルのスタイル */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 16px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-footer {
+    padding: 16px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* フォームのスタイル */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* イベントタイプのスタイル */
+#eventType option {
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.type-personal {
+    color: #007bff;
+}
+
+.type-interview {
+    color: #ffc107;
+}
+
+.type-other {
+    color: #6c757d;
+}
+
+/* 時間入力のスタイル */
+.time-group {
+    margin-bottom: 16px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.time-inputs {
+    display: flex;
+    gap: 16px;
+}
+
+.time-inputs > div {
+    flex: 1;
+}
+
+/* ボタンのスタイル */
+.btn-save {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}
+
+.close {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.close:hover {
+    color: #343a40;
+}
